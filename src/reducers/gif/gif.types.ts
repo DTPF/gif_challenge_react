@@ -1,0 +1,1 @@
+export const INIT_GIFS = 'INIT_GIFS'
