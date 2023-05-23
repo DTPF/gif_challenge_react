@@ -1,10 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 const initialGifState = {
-	gifs: '',
+	gifs: [],
 	postGif: (gif: any) => { },
-	updateGif: (gif: any) => { },
-	deleteGif: (gif: any) => { },
-	shareGif: () => { }
 }
 
 export default initialGifState
