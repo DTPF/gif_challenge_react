@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
 import UserProvider from './context/user/UserProvider'
 import GifProvider from './context/gif/GifProvider';
+import MyGifsProvider from './context/mygifs/MyGifsProvider';
 import router from './router/router';
 import { isLocalhost } from './utils/isLocalhost';
 
@@ -23,10 +24,12 @@ export default function App() {
     >
       <UserProvider>
         <GifProvider>
-          <RouterProvider
-            router={router}
-            fallbackElement={<></>}
-          />
+          <MyGifsProvider>
+            <RouterProvider
+              router={router}
+              fallbackElement={<></>}
+            />
+          </MyGifsProvider>
         </GifProvider>
       </UserProvider>
     </Auth0Provider>
