@@ -7,8 +7,15 @@ export default function gifReducer(state: any, action: any) {
 		case GifTypes.INIT_GIFS:
 			return {
 				...state,
-				gifs: payload,
+				gifs: payload.gifs,
 			}
+
+		case GifTypes.POST_GIF:
+			return {
+				...state,
+				gifs: [...state.gifs, payload.gif],
+			}
+
 		default:
 			return state
 	}

@@ -1,15 +1,16 @@
 import { getGifsApi } from 'src/api/gif.api';
-import * as UserTypes from './gif.types'
+import * as GifTypes from './gif.types'
 import { message } from 'antd';
+import { Gif } from 'src/interfaces/gif';
 
 export async function initGifsAction(dispatch: any) {
 	try {
 		const response = await getGifsApi()
 		if (response.status === 200 || response.status === 201) {
 			return dispatch({
-				type: UserTypes.INIT_GIFS,
+				type: GifTypes.INIT_GIFS,
 				payload: {
-					dbUser: response.result
+					gifs: response.result
 				}
 			})
 		} else {
@@ -18,4 +19,11 @@ export async function initGifsAction(dispatch: any) {
 	} catch (err) {
 		message.error('Server error')
 	}
+}
+
+export async function postGifAction(dispatch: any, gif: Gif) {
+	return dispatch({
+		type: GifTypes.POST_GIF,
+		payload: { gif }
+	})
 }
