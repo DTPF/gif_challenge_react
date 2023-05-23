@@ -1,3 +1,4 @@
+import Profile from "src/views/components/basic/profile/Profile";
 import HelmetSEO from "src/views/utils/HelmetSEO";
 
 const ProfilePage = () => {
@@ -6,7 +7,7 @@ const ProfilePage = () => {
       title='Profile | DaGif'
       description='DaGif Profile Page'
     >
-      Profile DaGif
+      <Profile />
     </HelmetSEO>
   )
 }
