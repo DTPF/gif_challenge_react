@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import UserContext from "src/context/user/UserContext";
-import { Avatar, Layout, Popover } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Avatar, FloatButton, Layout, Popover } from "antd";
+import { PlusOutlined, UserOutlined } from "@ant-design/icons";
 import './basicLayout.scss'
 const { Header, Footer, Content } = Layout;
 
@@ -11,6 +11,7 @@ export default function BasicLayout() {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
   const { dbUser } = useContext(UserContext)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const popoverContent = (
     <div className="basic-layout__popover">
@@ -20,6 +21,7 @@ export default function BasicLayout() {
     </div>
   )
   return (
+    <>
     <Layout className="basic-layout">
       <Header className="basic-layout__header">
         <h1 className="basic-layout__header--logo">DaGif</h1>
@@ -47,5 +49,13 @@ export default function BasicLayout() {
         DaGif ©2023 Created by DTPF
       </Footer>
     </Layout>
+      <FloatButton
+        shape="square"
+        type="primary"
+        style={{ right: 24 }}
+        icon={<PlusOutlined />}
+        onClick={() => isAuthenticated ? navigate('/gif-form') : loginWithRedirect()}
+      />
+    </>
   )
 }
