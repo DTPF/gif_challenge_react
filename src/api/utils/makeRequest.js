@@ -2,7 +2,7 @@ import { basePath } from "./config";
 
 export default async function makeRequest(
   url,
-  haveParams = null,
+  haveParams = false,
   haveToConvertToJson = true,
   headerMethod = '',
   headerToken = null,
