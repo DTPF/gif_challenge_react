@@ -3,6 +3,8 @@ export interface Gif {
   user: '',
   name: '',
   imageUrl: '',
+  externalImageUrl: '',
+  categories: [],
   timesShared: 0,
   createdAt: '',
   updatedAt: '',

@@ -10,6 +10,7 @@ const initialUserState = {
 		language: '',
 		avatar: '',
 		role: '',
+		gifs: []
 	},
 }
 
