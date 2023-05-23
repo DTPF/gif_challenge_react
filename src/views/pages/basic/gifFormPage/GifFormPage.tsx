@@ -1,3 +1,4 @@
+import GifForm from "src/views/components/basic/gifForm/GifForm";
 import HelmetSEO from "src/views/utils/HelmetSEO";
 
 const GifFormPage = () => {
@@ -6,7 +7,7 @@ const GifFormPage = () => {
       title='Gif Form | DaGif'
       description='DaGif Gif Form Page'
     >
-      Gif Form DaGif
+      <GifForm />
     </HelmetSEO>
   )
 }
