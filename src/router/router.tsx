@@ -1,19 +1,18 @@
-/* eslint-disable react-refresh/only-export-components */
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { ProtectedGif, ProtectedUser } from "./user.middelware";
 
 // LAYOUTS
-const BasicLayout = lazy(() => import('src/views/layouts/basicLayout'));
+const BasicLayout = lazy(() => import('views/layouts/basicLayout'));
 // USER PAGES
-const HomePage = lazy(() => import('src/views/pages/basic/homePage'));
-const CategoriesPage = lazy(() => import('src/views/pages/basic/categoriesPage'));
-const Category = lazy(() => import('src/views/components/basic/category'));
-const ProfilePage = lazy(() => import('src/views/pages/basic/profilePage'));
-const GifFormPage = lazy(() => import('src/views/pages/basic/gifFormPage'));
-const SearchPage = lazy(() => import('src/views/pages/basic/searchPage'));
+const HomePage = lazy(() => import('views/pages/basic/homePage'));
+const CategoriesPage = lazy(() => import('views/pages/basic/categoriesPage'));
+const Category = lazy(() => import('views/components/basic/category'));
+const ProfilePage = lazy(() => import('views/pages/basic/profilePage'));
+const GifFormPage = lazy(() => import('views/pages/basic/gifFormPage'));
+const SearchPage = lazy(() => import('views/pages/basic/searchPage'));
 // MESSAGES PAGES
-const ErrorPage = lazy(() => import('src/views/pages/errors'));
+const ErrorPage = lazy(() => import('views/pages/errors'));
 
 const router = createBrowserRouter([
   {

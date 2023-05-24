@@ -21,7 +21,6 @@ export default function UserProvider(props: ChildrenProps) {
 			}
 		}
 		registerLoginUser()
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isAuthenticated])
 
 	const memoProvider = useMemo(

@@ -1,5 +1,5 @@
-import HomeBasic from "src/views/components/basic/homeBasic/HomeBasic";
-import HelmetSEO from "src/views/utils/HelmetSEO";
+import HomeBasic from "views/components/basic/homeBasic/HomeBasic";
+import HelmetSEO from "views/utils/HelmetSEO";
 
 const HomePage = () => {
   return (

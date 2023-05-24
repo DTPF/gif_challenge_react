@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import UserContext from "../context/user/UserContext";
-import { Gif } from "src/interfaces/gif";
+import { Gif } from "interfaces/gif";
 import { message } from "antd";
 
 export const ProtectedUser = ({ children }: any) => {

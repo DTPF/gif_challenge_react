@@ -1,4 +1,4 @@
-import * as api from 'src/api/gif.api';
+import * as api from 'api/gif.api';
 import * as GifTypes from './myGifs.types'
 import { message } from 'antd';
 

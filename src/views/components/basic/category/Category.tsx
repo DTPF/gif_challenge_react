@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import RenderGifs from '../renderGifs/RenderGifs';
-import { getGifsByCategoryApi } from 'src/api/gif.api';
-import TitleH1 from '../titleH1/TitleH1';
+import RenderGifs from '../renderGifs';
+import { getGifsByCategoryApi } from 'api/gif.api';
+import TitleH1 from '../titleH1';
 
 export default function Category() {
 	const { categoryId } = useParams()

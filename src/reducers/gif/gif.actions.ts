@@ -1,7 +1,7 @@
-import { getGifsApi } from 'src/api/gif.api';
+import { getGifsApi } from 'api/gif.api';
 import * as GifTypes from './gif.types'
 import { message } from 'antd';
-import { Gif } from 'src/interfaces/gif';
+import { Gif } from 'interfaces/gif';
 
 export async function initGifsAction(dispatch: any) {
 	try {

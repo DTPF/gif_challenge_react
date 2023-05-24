@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getCategoriesApi } from 'src/api/category.api'
+import { getCategoriesApi } from 'api/category.api'
 import { Link } from 'react-router-dom'
 import TitleH1 from '../titleH1/TitleH1'
 import { Card } from 'antd'
@@ -21,7 +21,7 @@ export default function Categories() {
 	return (
 		<>
 			<TitleH1 title='Categories' />
-			<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 1200, margin: '0 auto' }}>
+			<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 1400, margin: '0 auto' }}>
 				{categories.map((category: any) => {
 					return <RenderCategory key={category._id} category={category} />
 				})}
@@ -32,13 +32,13 @@ export default function Categories() {
 
 function RenderCategory({ category }: any) {
 	return (
-		<Link to={`/categories/${category._id}`} style={{ display: 'flex', margin: 15 }}>
+		<Link to={`/categories/${category._id}`} className='gif-card-container'>
 			<Card
 				hoverable
-				style={{ width: 240 }}
-				cover={<img alt={category.name} src={category.imageUrl} width={240} height={240} />}
+				className='gif-card-container__card'
+				cover={<img alt={category.name} src={category.imageUrl} width={220} height={'auto'} />}
 			>
-				<Meta style={{ padding: 10, textAlign: 'center' }} title={category.name} />
+				<Meta title={category.name} style={{ padding: 10, textAlign: 'center' }} />
 			</Card>
 		</Link>
 	)

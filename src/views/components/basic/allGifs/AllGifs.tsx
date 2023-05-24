@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import GifContext from 'src/context/gif/GifContext'
+import GifContext from 'context/gif/GifContext'
 import RenderGifs from '../renderGifs/RenderGifs'
 
 export default function AllGifs() {

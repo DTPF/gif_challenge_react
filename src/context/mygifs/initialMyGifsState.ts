@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-empty-function */
 const initialMyGifsState = {
 	gifs: [],
 	postGif: (gif: any, messageApi: any) => { },

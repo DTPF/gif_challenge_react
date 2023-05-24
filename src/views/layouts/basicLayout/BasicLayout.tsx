@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import UserContext from "src/context/user/UserContext";
-import SearchContext from "src/context/search/SearchContext";
+import UserContext from "context/user/UserContext";
+import SearchContext from "context/search/SearchContext";
 import { Avatar, FloatButton, Layout, Popover, Input } from "antd";
 import { PlusOutlined, UserOutlined } from "@ant-design/icons";
 import './basicLayout.scss'

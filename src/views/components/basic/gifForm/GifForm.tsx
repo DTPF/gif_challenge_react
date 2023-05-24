@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import MyGifsContext from 'src/context/mygifs/MyGifsContext';
-import { getCategoriesNameApi } from 'src/api/category.api';
-import { Gif } from 'src/interfaces/gif';
+import MyGifsContext from 'context/mygifs/MyGifsContext';
+import { getCategoriesNameApi } from 'api/category.api';
+import { Gif } from 'interfaces/gif';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import type { SelectProps } from 'antd';
 import { Button, Form, Image, Input, Select, Switch, Upload, message } from 'antd'

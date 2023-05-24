@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import { DeleteOutlined, EditOutlined, ShareAltOutlined } from '@ant-design/icons'
 import { Card, Empty, Image, Popconfirm, message } from 'antd'
-import MyGifsContext from 'src/context/mygifs/MyGifsContext'
-import { Gif } from 'src/interfaces/gif'
+import MyGifsContext from 'context/mygifs/MyGifsContext'
+import { Gif } from 'interfaces/gif'
 import { useNavigate } from 'react-router-dom'
-import { incrementSharedCountApi } from 'src/api/gif.api'
+import { incrementSharedCountApi } from 'api/gif.api'
 import TitleH1 from '../titleH1/TitleH1'
 const { Meta } = Card
 
@@ -38,17 +38,17 @@ function RenderGif({ gif }: any) {
 		message.success('Copied to clipboard')
 	}
 	return (
-		<div style={{ display: 'flex', margin: 15 }}>
+		<div className='gif-card-container'>
 			<Card
 				hoverable
-				style={{ width: 220 }}
+				className='gif-card-container__card'
 				cover={<Image alt={gif.name} src={gif.imageUrl ? gif.imageUrl : gif.externalImageUrl} />}
 			>
-				<Meta style={{ padding: 0, textAlign: 'center' }} title={gif.name} description={(
+				<Meta style={{ paddingTop: 10, paddingBottom: 0, textAlign: 'center' }} title={gif.name} description={(
 					<div style={{ display: 'flex', alignItems: 'center' }}>
-						<img src={gif.user?.avatar} width={25} height={25} style={{ borderRadius: '50%' }} />
+						<img src={gif.user?.avatar} width={30} height={30} style={{ borderRadius: '50%' }} />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-							<div style={{ padding: '0 5px', fontSize: '.7rem' }}>{gif.user.name}</div>
+							<div style={{ padding: '0 5px', fontSize: '.8rem' }}>{gif.user.name}</div>
 							<div>
 								<Popconfirm
 									placement="topRight"

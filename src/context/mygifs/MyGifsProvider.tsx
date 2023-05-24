@@ -1,13 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useReducer, useMemo, useEffect, useCallback, useContext } from 'react'
 import MyGifsContext from './MyGifsContext'
 import UserContext from '../user/UserContext'
 import initialMyGifsState from './initialMyGifsState'
 import myGifsReducer from '../../reducers/myGifs/myGifs.reducer'
 import * as action from "../../reducers/myGifs/myGifs.actions"
-import { ChildrenProps } from 'src/interfaces/global'
+import { ChildrenProps } from 'interfaces/global'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Gif } from 'src/interfaces/gif'
+import { Gif } from 'interfaces/gif'
 import GifContext from '../gif/GifContext'
 
 export default function MyGifsProvider(props: ChildrenProps) {

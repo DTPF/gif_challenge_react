@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
-import { searchGifsApi } from 'src/api/gif.api';
+import { searchGifsApi } from 'api/gif.api';
 import RenderGifs from '../renderGifs/RenderGifs';
 import { Empty } from 'antd';
-import SearchContext from 'src/context/search/SearchContext';
+import SearchContext from 'context/search/SearchContext';
 
 export default function Search() {
 	const [gifs, setGifs] = useState([])

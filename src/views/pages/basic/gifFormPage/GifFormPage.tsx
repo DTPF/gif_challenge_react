@@ -1,5 +1,5 @@
-import GifForm from "src/views/components/basic/gifForm/GifForm";
-import HelmetSEO from "src/views/utils/HelmetSEO";
+import GifForm from "views/components/basic/gifForm/GifForm";
+import HelmetSEO from "views/utils/HelmetSEO";
 
 const GifFormPage = () => {
   return (

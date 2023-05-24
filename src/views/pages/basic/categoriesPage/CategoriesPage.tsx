@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import { getCategoryNameApi } from "src/api/category.api";
-import Categories from "src/views/components/basic/categories/Categories";
-import HelmetSEO from "src/views/utils/HelmetSEO";
+import { getCategoryNameApi } from "api/category.api";
+import Categories from "views/components/basic/categories/Categories";
+import HelmetSEO from "views/utils/HelmetSEO";
 
 const CategoriesPage = () => {
   const { categoryId } = useParams()

@@ -1,5 +1,5 @@
-import { Gif } from "src/interfaces/gif"
-import makeRequest from 'src/api/utils/makeRequest'
+import { Gif } from "interfaces/gif"
+import makeRequest from 'api/utils/makeRequest'
 import { basePath } from "./utils/config";
 type GifResponse = {
 	status: number,
