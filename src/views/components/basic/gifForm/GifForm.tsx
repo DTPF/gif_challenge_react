@@ -57,7 +57,7 @@ export default function GifForm() {
 					name="name"
 					rules={[{ required: !gifId ? true : false, message: 'Please input playlist name!' }]}
 				>
-					<Input placeholder='Introduce track name' defaultValue={findGif?.name} />
+					<Input placeholder='Introduce track name' defaultValue={findGif?.name} size="large" />
 				</Form.Item>
 
 				<Form.Item
@@ -70,6 +70,7 @@ export default function GifForm() {
 						defaultValue={findGif?.categories}
 						options={categoriesOptions}
 						optionFilterProp='label'
+						size="large"
 					/>
 				</Form.Item>
 
