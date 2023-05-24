@@ -53,16 +53,18 @@ export default function BasicLayout() {
           </Popover>
         </Header>
         <Content className='basic-layout__content'>
-          <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
-            <Search
-              placeholder="Search gif's in DaGif"
-              allowClear
-              enterButton="Search"
-              size="large"
-              style={{ maxWidth: 500, display: 'flex', justifyContent: 'center' }}
-              onChange={(e) => handleSearch(e.target.value)}
-            />
-          </div>
+          {location.pathname !== '/gif-form' && (
+            <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
+              <Search
+                placeholder="Search gif's in DaGif"
+                allowClear
+                enterButton="Search"
+                size="large"
+                style={{ maxWidth: 500, display: 'flex', justifyContent: 'center' }}
+                onChange={(e) => handleSearch(e.target.value)}
+              />
+            </div>
+          )}
           <Outlet />
         </Content>
         <Footer className="basic-layout__footer">
