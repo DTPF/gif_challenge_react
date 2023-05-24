@@ -46,7 +46,7 @@ function RenderGif({ gif }: any) {
 			>
 				<Meta style={{ paddingTop: 10, paddingBottom: 0, textAlign: 'center' }} title={gif.name} description={(
 					<div style={{ display: 'flex', alignItems: 'center' }}>
-						<img src={gif.user?.avatar} width={30} height={30} style={{ borderRadius: '50%' }} />
+						<img src={gif.user?.avatar} width={30} height={30} style={{ borderRadius: '50%' }} alt='avatar' />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
 							<div style={{ padding: '0 5px', fontSize: '.8rem' }}>{gif.user.name}</div>
 							<div>

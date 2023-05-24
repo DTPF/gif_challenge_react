@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import UserContext from "context/user/UserContext";
 import SearchContext from "context/search/SearchContext";
-import { Avatar, FloatButton, Layout, Popover, Input } from "antd";
+import { Avatar, FloatButton, Layout, Popover, Input, ConfigProvider } from "antd";
 import { PlusOutlined, UserOutlined } from "@ant-design/icons";
 import './basicLayout.scss'
 const { Header, Footer, Content } = Layout;
@@ -29,11 +29,12 @@ export default function BasicLayout() {
     }
   }
   return (
-    <>
-
+    <ConfigProvider
+      theme={{ token: { colorPrimary: '#7d7d7d' } }}
+    >
       <Layout className="basic-layout">
         <Header className="basic-layout__header">
-          <h1 className="basic-layout__header--logo">DaGif</h1>
+          <Link to={'/'}><h1 className="basic-layout__header--logo">DaGif</h1></Link>
           <ul className="basic-layout__header--menu">
             <li className={location.pathname === '/' ? 'active' : ''}>
               <Link to={'/'}>Home</Link>
@@ -48,7 +49,7 @@ export default function BasicLayout() {
             )}
           </ul>
           <Popover placement="bottomRight" content={popoverContent} trigger="click">
-            <Avatar className="basic-layout__header--avatar" icon={dbUser.avatar ? <img src={dbUser.avatar} /> : <UserOutlined />} />
+            <Avatar className="basic-layout__header--avatar" icon={dbUser.avatar ? <img src={dbUser.avatar} alt="avatar" width={48} height={48} /> : <UserOutlined />} />
           </Popover>
         </Header>
         <Content className='basic-layout__content'>
@@ -75,6 +76,6 @@ export default function BasicLayout() {
         icon={<PlusOutlined />}
         onClick={() => isAuthenticated ? navigate('/gif-form') : loginWithRedirect()}
       />
-    </>
+    </ConfigProvider>
   )
 }
