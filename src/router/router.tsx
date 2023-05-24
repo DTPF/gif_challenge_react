@@ -7,7 +7,8 @@ import { ProtectedGif, ProtectedUser } from "./user.middelware";
 const BasicLayout = lazy(() => import('src/views/layouts/basicLayout'));
 // USER PAGES
 const HomePage = lazy(() => import('src/views/pages/basic/homePage'));
-const CategoryPage = lazy(() => import('src/views/pages/basic/categoryPage'));
+const CategoriesPage = lazy(() => import('src/views/pages/basic/categoriesPage'));
+const Category = lazy(() => import('src/views/components/basic/category'));
 const ProfilePage = lazy(() => import('src/views/pages/basic/profilePage'));
 const GifFormPage = lazy(() => import('src/views/pages/basic/gifFormPage'));
 // MESSAGES PAGES
@@ -24,7 +25,14 @@ const router = createBrowserRouter([
       },
       {
         path: "categories",
-        element: <Suspense fallback={<></>}><CategoryPage /></Suspense>,
+        element: <Suspense fallback={<></>}><CategoriesPage /></Suspense>,
+        children: [
+          {
+            path: ":categoryId",
+            element: <Suspense fallback={<></>}><Category /></Suspense>
+          },
+        ]
+
       },
       {
         path: "profile",

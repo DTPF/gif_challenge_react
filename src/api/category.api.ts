@@ -11,3 +11,9 @@ export const getCategoriesApi = async (): Promise<any> => {
 	const data = await response.json()
 	return data
 }
+
+export const getCategoryNameApi = async (categoryId: string): Promise<any> => {
+	const response = await fetch(`${basePath}/category-name/${categoryId}`)
+	const data = await response.json()
+	return data
+}

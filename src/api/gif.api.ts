@@ -80,3 +80,9 @@ export const deleteGifByIdApi = async (gifId: string, userId: string, token: any
 	const result = await response.json()
 	return result
 }
+
+export const getGifsByCategoryApi = async (categoryId: string): Promise<any> => {
+	const response = await fetch(`${basePath}/gifs-by-category/${categoryId}`)
+	const data = await response.json()
+	return data
+}
