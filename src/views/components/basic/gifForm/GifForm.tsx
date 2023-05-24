@@ -40,14 +40,14 @@ export default function GifForm() {
 	});
 
 	return (
-		<div style={{ maxWidth: 600, margin: '0 auto' }} >
+		<div >
 			{contextHolder}
 			<TitleH1 title={`${gifId ? `Update '${findGif.name}'` : 'Create'} Gif`} />
 			<Form
 				name="basic"
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 12 }}
-				style={{ maxWidth: 600, margin: '0 auto', paddingTop: 10 }}
+				style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}
 				initialValues={{ remember: true }}
 				onFinish={(values) => !gifId ? postGif(values, messageApi) : updateGif(findGif._id, values, messageApi)}
 				onFinishFailed={(errorInfo) => console.log('Failed:', errorInfo)}
@@ -113,7 +113,7 @@ export default function GifForm() {
 						src={findGif?.imageUrl}
 					/>
 				</div>
-				<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+				<Form.Item style={{ textAlign: 'center', margin: '0 auto' }}>
 					<Button onClick={() => navigate(-1)} type='text' style={{ marginRight: 20 }}>
 						<ArrowLeftOutlined /> Go back
 					</Button>

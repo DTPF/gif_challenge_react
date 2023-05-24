@@ -46,22 +46,20 @@ function RenderGif({ gif }: any) {
 			>
 				<Meta style={{ paddingTop: 10, paddingBottom: 0, textAlign: 'center' }} title={gif.name} description={(
 					<div style={{ display: 'flex', alignItems: 'center' }}>
-						<img src={gif.user?.avatar} width={30} height={30} style={{ borderRadius: '50%' }} alt='avatar' />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-							<div style={{ padding: '0 5px', fontSize: '.8rem' }}>{gif.user.name}</div>
+							<Popconfirm
+								placement="topRight"
+								title={'Are you sure to delete this gif?'}
+								description={'Delete the gif'}
+								onConfirm={() => deleteGif(gif._id, messageApi)}
+								okText="Yes"
+								cancelText="No"
+							>
+								<DeleteOutlined style={{ fontSize: '1.3rem', color: 'red' }} />
+							</Popconfirm>
 							<div>
-								<Popconfirm
-									placement="topRight"
-									title={'Are you sure to delete this gif?'}
-									description={'Delete the gif'}
-									onConfirm={() => deleteGif(gif._id, messageApi)}
-									okText="Yes"
-									cancelText="No"
-								>
-									<DeleteOutlined style={{ fontSize: '1.1rem', color: 'red' }} />
-								</Popconfirm>
-								<EditOutlined style={{ fontSize: '1.1rem', paddingLeft: 7 }} onClick={() => navigate(`/gif-form/${gif._id}`)} />
-								<ShareAltOutlined onClick={() => handleShare()} style={{ fontSize: '1.1rem', paddingLeft: 7 }} />
+								<EditOutlined style={{ fontSize: '1.3rem' }} onClick={() => navigate(`/gif-form/${gif._id}`)} />
+								<ShareAltOutlined onClick={() => handleShare()} style={{ fontSize: '1.3rem', paddingLeft: 10 }} />
 							</div>
 						</div>
 					</div>

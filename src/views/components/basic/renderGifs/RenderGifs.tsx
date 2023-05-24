@@ -29,7 +29,7 @@ function RenderGif({ gif }: any) {
 				className='gif-card-container__card'
 				cover={<Image alt={gif.name} src={gif.imageUrl ? gif.imageUrl : gif.externalImageUrl} />}
 			>
-				<Meta style={{ padding: 0, textAlign: 'center' }} title={gif.name} description={(
+				<Meta style={{ paddingTop: 10, textAlign: 'center' }} title={gif.name} description={(
 					<div style={{ display: 'flex', alignItems: 'center' }}>
 						<img src={gif.user?.avatar} width={30} height={30} style={{ borderRadius: '50%' }} />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>

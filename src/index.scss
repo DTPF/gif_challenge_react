@@ -26,10 +26,6 @@ a {
   }
 }
 
-.ant-card-body {
-  padding: 13px !important;
-}
-
 .gif-card-container {
   margin: 5px;
 
@@ -69,4 +65,13 @@ a {
       height: auto;
     }
   }
+}
+
+.ant-card-body {
+  padding: 13px !important;
+}
+
+.ant-card-meta-title {
+  padding-bottom: 5px;
+  font-size: 1.15rem !important;
 }
