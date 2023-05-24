@@ -11,6 +11,7 @@ const CategoriesPage = lazy(() => import('src/views/pages/basic/categoriesPage')
 const Category = lazy(() => import('src/views/components/basic/category'));
 const ProfilePage = lazy(() => import('src/views/pages/basic/profilePage'));
 const GifFormPage = lazy(() => import('src/views/pages/basic/gifFormPage'));
+const SearchPage = lazy(() => import('src/views/pages/basic/searchPage'));
 // MESSAGES PAGES
 const ErrorPage = lazy(() => import('src/views/pages/errors'));
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Suspense fallback={<></>}><HomePage /></Suspense>,
+      },
+      {
+        path: "search",
+        element: <Suspense fallback={<></>}><SearchPage /></Suspense>
       },
       {
         path: "categories",

@@ -86,3 +86,9 @@ export const getGifsByCategoryApi = async (categoryId: string): Promise<any> => 
 	const data = await response.json()
 	return data
 }
+
+export const searchGifsApi = async (query: string): Promise<any> => {
+	const response = await fetch(`${basePath}/search-gifs/${query}`)
+	const data = await response.json()
+	return data
+}

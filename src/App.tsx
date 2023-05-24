@@ -5,6 +5,7 @@ import GifProvider from './context/gif/GifProvider';
 import MyGifsProvider from './context/mygifs/MyGifsProvider';
 import router from './router/router';
 import { isLocalhost } from './utils/isLocalhost';
+import SearchProvider from './context/search/SearchProvider';
 
 export default function App() {
   return (
@@ -25,10 +26,12 @@ export default function App() {
       <UserProvider>
         <GifProvider>
           <MyGifsProvider>
-            <RouterProvider
-              router={router}
-              fallbackElement={<></>}
-            />
+            <SearchProvider>
+              <RouterProvider
+                router={router}
+                fallbackElement={<></>}
+              />
+            </SearchProvider>
           </MyGifsProvider>
         </GifProvider>
       </UserProvider>
