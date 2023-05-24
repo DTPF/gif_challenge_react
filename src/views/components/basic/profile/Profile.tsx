@@ -11,7 +11,7 @@ const { Meta } = Card
 export default function Profile() {
 	const { gifs } = useContext(MyGifsContext)
 	return (
-		<>
+		<div style={{ maxWidth: 1600, margin: '0 auto' }}>
 			<TitleH1 title={`My gif' s`} />
 			<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
 				{gifs.length === 0 ? (
@@ -24,7 +24,7 @@ export default function Profile() {
 					})
 				)}
 			</div>
-		</>
+		</div>
 	)
 }
 
@@ -41,7 +41,7 @@ function RenderGif({ gif }: any) {
 		<div style={{ display: 'flex', margin: 15 }}>
 			<Card
 				hoverable
-				style={{ width: 240 }}
+				style={{ width: 220 }}
 				cover={<Image alt={gif.name} src={gif.imageUrl ? gif.imageUrl : gif.externalImageUrl} />}
 			>
 				<Meta style={{ padding: 0, textAlign: 'center' }} title={gif.name} description={(

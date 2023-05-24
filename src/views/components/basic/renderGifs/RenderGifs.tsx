@@ -26,7 +26,7 @@ function RenderGif({ gif }: any) {
 		<div style={{ display: 'flex', margin: 15 }}>
 			<Card
 				hoverable
-				style={{ width: 240 }}
+				style={{ width: 220 }}
 				cover={<Image alt={gif.name} src={gif.imageUrl ? gif.imageUrl : gif.externalImageUrl} />}
 			>
 				<Meta style={{ padding: 0, textAlign: 'center' }} title={gif.name} description={(
