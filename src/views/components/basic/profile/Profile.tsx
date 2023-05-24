@@ -5,22 +5,26 @@ import MyGifsContext from 'src/context/mygifs/MyGifsContext'
 import { Gif } from 'src/interfaces/gif'
 import { useNavigate } from 'react-router-dom'
 import { incrementSharedCountApi } from 'src/api/gif.api'
+import TitleH1 from '../titleH1/TitleH1'
 const { Meta } = Card
 
 export default function Profile() {
 	const { gifs } = useContext(MyGifsContext)
 	return (
-		<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
-			{gifs.length === 0 ? (
-				<Empty style={{ marginTop: 50 }} />
-			) : (
-				gifs.map((gif: Gif) => {
-					return (
-						<RenderGif key={gif._id} gif={gif} />
-					)
-				})
-			)}
-		</div>
+		<>
+			<TitleH1 title={`My gif' s`} />
+			<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+				{gifs.length === 0 ? (
+					<Empty style={{ marginTop: 50 }} />
+				) : (
+					gifs.map((gif: Gif) => {
+						return (
+							<RenderGif key={gif._id} gif={gif} />
+						)
+					})
+				)}
+			</div>
+		</>
 	)
 }
 

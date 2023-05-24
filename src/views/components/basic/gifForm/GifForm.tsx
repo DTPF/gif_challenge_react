@@ -6,6 +6,7 @@ import { Gif } from 'src/interfaces/gif';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import type { SelectProps } from 'antd';
 import { Button, Form, Image, Input, Select, Switch, Upload, message } from 'antd'
+import TitleH1 from '../titleH1/TitleH1';
 
 export default function GifForm() {
 	const { gifId } = useParams()
@@ -41,12 +42,12 @@ export default function GifForm() {
 	return (
 		<div style={{ maxWidth: 600, margin: '0 auto' }} >
 			{contextHolder}
-			<h1 style={{ textAlign: 'center', padding: '15px 0', paddingBottom: 25 }}>{gifId ? `Update '${findGif.name}'` : 'Create'} Gif</h1>
+			<TitleH1 title={`${gifId ? `Update '${findGif.name}'` : 'Create'} Gif`} />
 			<Form
 				name="basic"
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 12 }}
-				style={{ maxWidth: 600, margin: '0 auto' }}
+				style={{ maxWidth: 600, margin: '0 auto', paddingTop: 10 }}
 				initialValues={{ remember: true }}
 				onFinish={(values) => !gifId ? postGif(values, messageApi) : updateGif(findGif._id, values, messageApi)}
 				onFinishFailed={(errorInfo) => console.log('Failed:', errorInfo)}
