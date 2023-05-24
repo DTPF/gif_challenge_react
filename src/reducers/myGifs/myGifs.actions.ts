@@ -20,7 +20,7 @@ export async function initMyGifsAction(dispatch: any, userId: string, token: any
 	}
 }
 
-export async function postGifAction(dispatch: any, userId: string, gif: any, token: any, messageApi: any, addToGifState: any) {
+export async function postGifAction(dispatch: any, userId: string, gif: any, token: any, messageApi: any, addToGifState: any, navigate: any) {
 	try {
 		let newGif;
 		if (gif.externalImage) {
@@ -35,12 +35,13 @@ export async function postGifAction(dispatch: any, userId: string, gif: any, tok
 			messageApi.destroy()
 			messageApi.success(`Gif '${newGif.result.name}' created`)
 			addToGifState(newGif.result)
-			return dispatch({
+			dispatch({
 				type: GifTypes.POST_GIF,
 				payload: {
 					gifs: newGif.result
 				}
 			})
+			return navigate('/profile')
 		} else {
 			messageApi.destroy()
 			messageApi.warning('Authentication failed')

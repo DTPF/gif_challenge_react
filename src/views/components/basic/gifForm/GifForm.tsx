@@ -48,16 +48,17 @@ export default function GifForm() {
 				labelCol={{ span: 8 }}
 				wrapperCol={{ span: 12 }}
 				style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}
-				initialValues={{ remember: true }}
-				onFinish={(values) => !gifId ? postGif(values, messageApi) : updateGif(findGif._id, values, messageApi)}
+				onFinish={(values) => {
+					!gifId ? postGif(values, messageApi) : updateGif(findGif._id, values, messageApi)
+				}}
 				onFinishFailed={(errorInfo) => console.log('Failed:', errorInfo)}
 			>
 				<Form.Item
 					label="Gif name"
 					name="name"
-					rules={[{ required: !gifId ? true : false, message: 'Please input playlist name!' }]}
+					rules={[{ required: !gifId ? true : false, message: 'Please input Gif name!' }]}
 				>
-					<Input placeholder='Introduce track name' defaultValue={findGif?.name} size="large" />
+					<Input placeholder='Introduce Gif name' defaultValue={findGif?.name} size="large" />
 				</Form.Item>
 
 				<Form.Item

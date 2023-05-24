@@ -8,12 +8,14 @@ import { ChildrenProps } from 'interfaces/global'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Gif } from 'interfaces/gif'
 import GifContext from '../gif/GifContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function MyGifsProvider(props: ChildrenProps) {
 	const [myGifsState, dispatch] = useReducer(myGifsReducer, initialMyGifsState)
 	const { postGif: addToGifState } = useContext(GifContext)
 	const { getAccessTokenSilently } = useAuth0()
 	const { dbUser } = useContext(UserContext)
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const initGifs = async () => {
@@ -28,7 +30,7 @@ export default function MyGifsProvider(props: ChildrenProps) {
 		messageApi.open({ type: 'loading', content: `Creating gif`, duration: 0 })
 		const token = await getAccessTokenSilently()
 		if (dbUser._id && token) {
-			action.postGifAction(dispatch, dbUser._id, gif, token, messageApi, addToGifState)
+			action.postGifAction(dispatch, dbUser._id, gif, token, messageApi, addToGifState, navigate)
 		}
 	},
 		[dbUser._id])

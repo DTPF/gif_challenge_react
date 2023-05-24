@@ -25,14 +25,12 @@ export default function App() {
     >
       <UserProvider>
         <GifProvider>
-          <MyGifsProvider>
-            <SearchProvider>
-              <RouterProvider
-                router={router}
-                fallbackElement={<></>}
-              />
-            </SearchProvider>
-          </MyGifsProvider>
+          <SearchProvider>
+            <RouterProvider
+              router={router}
+              fallbackElement={<></>}
+            />
+          </SearchProvider>
         </GifProvider>
       </UserProvider>
     </Auth0Provider>
