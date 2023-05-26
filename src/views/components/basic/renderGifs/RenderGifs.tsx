@@ -6,7 +6,7 @@ const { Meta } = Card
 
 export default function RenderGifs({ gifs }: any) {
 	return (
-		<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+		<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
 			{gifs.map((gif: Gif) => {
 				return (
 					<RenderGif key={gif._id} gif={gif} />
